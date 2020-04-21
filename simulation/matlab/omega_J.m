@@ -1,3 +1,4 @@
+%Angular moment of interita 
 function x = omega_J(p, q, r)
 
     J = evalin('base','J');
