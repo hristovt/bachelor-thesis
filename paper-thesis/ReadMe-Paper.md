@@ -1,3 +1,2 @@
 # Bachelor Thesis 
-This repository includes the LaTex Files for the bachelor thesis.<br/>
-The LaTex files are besed on the Bachelor Thesis repository made by [Marius Schulz](https://github.com/mariusschulz).
+This repository includes the .txt file for the bachelor thesis. The next step is to create LaTex format of the thesis. 
