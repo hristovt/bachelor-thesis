@@ -122,16 +122,6 @@ void loop() {
       yaw=(yaw-180.0f)*-1;
     }
 
-    Serial.print("Pitch: ");
-    Serial.print(pitch, 2);
-    Serial.print("\t");
-
-    Serial.print("Yaw: ");
-    Serial.print(yaw, 2);
-    Serial.print("\t");
-
-
-
     if(time>40000){
       if(pitch<0){
         tvc_p.SetControllerDirection(DIRECT);
@@ -165,25 +155,17 @@ void loop() {
         delta_y.number=Output_y*-1;
       }
 
-      Serial.print("Output_y: ");
-      Serial.print(Output_y);
-      Serial.print("\t");
+        Serial.write('A');
 
-      Serial.print("Output_p: ");
-      Serial.print(Output_p);
-      Serial.print("\n");
+        for (int i=0; i<4; i++){
+           Serial.write(delta_p.bytes[i]);
+        }
 
-        //Serial.write('A');
-
-        //for (int i=0; i<4; i++){
-        //   Serial.write(delta_p.bytes[i]);
-        //}
-
-        //for (int i=0; i<4; i++){
-        //   Serial.write(delta_y.bytes[i]);
-        //}
+        for (int i=0; i<4; i++){
+           Serial.write(delta_y.bytes[i]);
+        }
         
-        //Serial.print("\n");
+        Serial.print("\n");
     }
 
     microsPrevious = microsPrevious + microsPerReading;
